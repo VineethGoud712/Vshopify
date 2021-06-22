@@ -1,0 +1,20 @@
+<div class="bg-dark text-center pt-2 pb-2 "><h2 class="text-light">Products</h2></div>
+<div class="bg-danger text-center">
+    <ul class="list-inline">
+        <li class="list-inline-item "><a routerLink="/{{categoryD}}/{{title.category}}" class="cl nav-link text-light">{{CategoryList}}</a></li>
+    </ul>
+     
+</div>
+<div class="row">
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let p of allProducts">
+        <div class="card h-100">
+            <a [routerLink]="['/product',p.id]"><img class="card-img-top" src="{{p.image}}" alt="..." width="300" height="300"/></a>
+            <div class="card-body">
+                <h4 class="card-title"><a routerLink="">{{p.title}}</a></h4>
+                <h5>${{p.price}}</h5>
+                <p class="card-text">{{p.description}}</p>
+            </div>
+            <div class="card-footer"><small class="text-muted">★ ★ ★ ★ ☆</small></div>
+        </div>
+    </div>
+</div>
